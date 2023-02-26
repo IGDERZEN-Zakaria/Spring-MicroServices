@@ -13,7 +13,7 @@ In order to run the application, you need to have:
 ### Run it locally
 1. Open terminal and clone the repo:
 ```shell
-git clone https://github.com/2022-DEV1-067/TicTacToe.git
+git clone https://github.com/IGDERZEN-Zakaria/Spring-MicroServices.git
 ```
 2. Make sure you are in project directory  in order to build and package the application with the following Cmd Commande:
 ```shell
