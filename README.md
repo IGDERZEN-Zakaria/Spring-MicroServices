@@ -15,16 +15,16 @@ In order to run the application, you need to have:
 ```shell
 git clone https://github.com/IGDERZEN-Zakaria/Spring-MicroServices.git
 ```
-1. Make sure you are in project directory  in order to build and package the application with the following Cmd Commande:
+2. Make sure you are in project directory  in order to build and package the application with the following Cmd Commande:
 ```shell
 mvn clean install
 ```
-1. launch the docker compose containers 
+3. launch the docker compose containers 
 ```shell
 docker compose up -d
 ```
 
-1. launch the microservices applications
+4. launch the microservices applications
 
 
 # Architecture
