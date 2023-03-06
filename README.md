@@ -39,6 +39,32 @@ java -jar customer/target/customer-1.0-SNAPSHOT.jar
 java -jar fraud/target/fraud-1.0-SNAPSHOT.jar
 java -jar notification/target/notification-1.0-SNAPSHOT.jar
 ```
+
+## Data Base
+
+This application has postgreSQL database , via docker container 
+
+You can access it by browsing : http://localhost:5050/browser
+
+Password = password
+
+## Eureka Server
+
+You can access it by browsing : http://localhost:8761
+
+## Zipkin
+
+
+You can access it by browsing : http://localhost:9411
+
+## RabbitMQ
+
+You can access it by browsing : http://localhost:15672
+
+UserName = guest
+
+Password = guest
+
 # Architecture
 
 ![img.png](img.png)
