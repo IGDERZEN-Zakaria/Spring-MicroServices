@@ -24,9 +24,65 @@ mvn clean install
 docker compose up -d
 ```
 
-4. launch the microservices applications
+4. launch the microservices applications in this order 
 
+- eureka-server
+- apigw
+- customer
+- fraud
+- notification
+
+```shell
+java -jar eureka-server/target/eureka-server-1.0-SNAPSHOT.jar 
+java -jar apigw/target/apigw-1.0-SNAPSHOT.jar 
+java -jar customer/target/customer-1.0-SNAPSHOT.jar
+java -jar fraud/target/fraud-1.0-SNAPSHOT.jar
+java -jar notification/target/notification-1.0-SNAPSHOT.jar
+```
+
+## Data Base
+
+This application has postgreSQL database , via docker container 
+
+You can access it by browsing : http://localhost:5050/browser
+
+Password = password
+
+## Eureka Server
+
+You can access it by browsing : http://localhost:8761
+
+## Zipkin
+
+
+You can access it by browsing : http://localhost:9411
+
+## RabbitMQ
+
+You can access it by browsing : http://localhost:15672
+
+UserName = guest
+
+Password = guest
 
 # Architecture
 
 ![img.png](img.png)
+
+# Troubleshooting (Ubuntu)
+
+### before lunching local postgresQl DB 
+```shell
+sudo systemctl start postgresql
+```
+###  before lunching docker postgresQl container 
+```shell
+sudo systemctl stop postgresql
+sudo lsof -i :5050
+sudo kill -9 "pid"
+```
+
+### to change default java version 
+```shell
+sudo update-alternatives --config java
+```
