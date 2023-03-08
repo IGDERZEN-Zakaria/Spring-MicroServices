@@ -86,3 +86,30 @@ sudo kill -9 "pid"
 ```shell
 sudo update-alternatives --config java
 ```
+
+### to use jib plugin to push images to dockerHub
+```shell
+mvn clean package -P build-docker-image 
+-Djib.from.auth.username=Username 
+-Djib.from.auth.password=Password 
+-Djib.to.auth.username=Username 
+-Djib.to.auth.password=Password          
+```
+### to pull docker images from dockerHub
+```shell
+docker compose pull
+```
+
+### to launch the containers
+```shell
+docker compose up -d
+```
+
+### to check logs of given container
+```shell
+docker logs container_name
+```
+### to stop all containers
+```shell
+docker compose stop
+```
