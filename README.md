@@ -190,7 +190,7 @@ KubeCtl is also used to :
 
 # Kubernetes Architecture
 
-![Kubernetes Architecture.png](..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FKubernetes%20Architecture.png)
+![Kubernetes Architecture.png](Kubernetes%20Architecture.png)
 
 # Troubleshooting (Ubuntu)
 
