@@ -127,6 +127,51 @@ kubectl get pods
 ```shell
 kubectl delete pod pod_name
 ```
+### access to SSH ( Never run postgres in production , do it only for testing puroposes)
+```shell
+minikube ssh
+```
+### access postgreSQL via minikube folder
+```shell
+kubectl exec -it postgres-0 -- psql -U amigoscode
+```
+
+### create the databases inside the pod    
+```shell
+create database customer;
+create database fraud;
+create database notification;
+```
+
+
+### apply config with kubectl 
+```shell
+cd k8s/minikube/bootstrap/
+kubectl apply -f bootstrap/postgres
+kubectl apply -f bootstrap/rabbitmq
+kubectl apply -f bootstrap/zipkin
+kubectl get pods -w
+kubectl describe pod postgres-0
+kubectl logs postgres-0
+```
+###  display all the resources (pods/services/statefulsets ext...)
+```shell
+kubectl get all
+```
+
+###  display the service url
+```shell
+minikube service --url service_name
+```
+###  list the services
+```shell
+kubectl get services
+```
+###  access the pod via specified port
+```shell
+minikube tunnel
+http://127.0.0.1:9411
+```
 
 
 Interaction between our machine and our kube is done by KubeCTL ( commande line tool)
@@ -139,10 +184,13 @@ KubeCtl is also used to :
 - ...
 
 
-
 # Architecture
 
-![img.png](img.png)
+![Architecture.png](Architecture.png)
+
+# Kubernetes Architecture
+
+![Kubernetes Architecture.png](..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FKubernetes%20Architecture.png)
 
 # Troubleshooting (Ubuntu)
 
