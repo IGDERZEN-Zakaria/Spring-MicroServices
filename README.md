@@ -154,6 +154,7 @@ kubectl get pods -w
 kubectl describe pod postgres-0
 kubectl logs postgres-0
 ```
+
 ###  display all the resources (pods/services/statefulsets ext...)
 ```shell
 kubectl get all
@@ -169,8 +170,32 @@ kubectl get services
 ```
 ###  access the pod via specified port
 ```shell
+minikube start
 minikube tunnel
 http://127.0.0.1:9411
+```
+
+### apply config with kubectl for customer deployement 
+```shell
+cd /k8s
+kubectl apply -f minikube/services/customer
+kubectl apply -f minikube/services/fraud
+kubectl apply -f minikube/services/notification
+```
+
+### listing kubernetes services 
+```shell
+kubectl get svc
+```
+### scale down the customer deployment
+```shell
+kubectl scale --replicas=0 deployment customer
+```
+###  access customer via port = 80
+```shell
+minikube start
+minikube tunnel
+http://localhost/api/v1/customers [Post Req with postman]
 ```
 
 
