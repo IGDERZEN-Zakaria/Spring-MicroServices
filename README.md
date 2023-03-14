@@ -182,7 +182,11 @@ KubeCtl is also used to :
 - Debug clusters
 - View logs
 - ...
+ 
 
+Running the application with the client-default.properties will require adding
+SPRING_PROFILES_ACTIVE=default  to the Environement variables 
+ 
 
 # Architecture
 
